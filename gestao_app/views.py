@@ -32,16 +32,16 @@ def addnewEd(request):
 
 
 def indexAp(request):
-    apartamento = ApartamentoForm.objects.all()
+    apartamento = Apartamento.objects.all()
     return render(request, "show.html", {'apartamento': apartamento})
 
 def indexEd(request):
-    edificio = EdificioForm.objects.all()
+    edificio = Edificio.objects.all()
     return render(request, "show.html", {'edificio': edificio})
 
 def editAp(request, id):
     apartamento = Apartamento.objects.get(id=id)
-    return render(request, 'edit.html', {'apartamento': apartamento})
+    return render(request, 'alugar.html', {'apartamento': apartamento})
 
 
 def updateAp(request, id):

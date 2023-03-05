@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Adicionar novo Edifício{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addnewed">
+    {% csrf_token %}
+    <div class="container">
+        <div class="col-12">
+        <h3>Informe os Detalhes</h3>
+        </div>
+
+        <div class="mb-3">
+            <label>Nome:</label>
+            {{ form.edificio_name }}
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+    </form>
+</div>
+{% endblock content %}

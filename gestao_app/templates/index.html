@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Adicionar novo Apartamento{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addnewap">
+    {% csrf_token %}
+    <div class="container">
+        <div class="col-12">
+        <h3>Informe os Detalhes</h3>
+        </div>
+
+        <div class="mb-3">
+            <label>Nome:</label>
+            {{ form.ap_name }}
+        </div>
+        <div class="mb-3">
+            <label>Status:</label>
+            <select name="ap_status">
+                <option value=1>Livre</option>
+                <option value=2>Alugado</option>
+            </select>
+            {{ form.ap_status }}
+        </div>
+        <div class="mb-3">
+            <label>Edificío:</label>
+            {{ form.edificio_id }}
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+    </form>
+</div>
+{% endblock content %}
