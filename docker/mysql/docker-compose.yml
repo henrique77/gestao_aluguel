@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  database:
+    build:
+      context: .
+      dockerfile: ./Dokerfile
+    ports:
+      - "3306:3306"
