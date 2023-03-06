@@ -1,33 +1,52 @@
 {% extends "base.html" %}
 
-{% block title %}Gestão{% endblock title %}
+{% block title %}Gestão de Aluguel{% endblock title %}
 
 {% block content %}
  <div class="col-md-12">
-        <span><a href="/addnew" class="btn btn-primary">Adicionar Edifício</a></span>
         <div class="table-responsive">
         <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
         <thead>
-<!--            <th><input type="checkbox" id="checkall" /></th>-->
             <th>Edifício</th>
             <th>Apartamento</th>
             <th>Status</th>
             <th>Locatario</th>
             <th>Valor</th>
             <th>Opção</th>
-            <th>Informação</th>
         </thead>
         <tbody>
         {% for ap in apartamento %}
             <tr>
-            <td><input type="checkbox" class="checkthis" /></td>
             <td>{{ ap.edificio_id }}</td>
-            <td>{{ ap.ap_nome }}</td>
-            <td>{{ ap.ap_status }}</td>
-            <td>{{ ap.locatario_nome }}</td>
-            <td>{{ ap.valor_aluguel }}</td>
-            <td><a href="/edit/{{ ap.id }}" class="btn btn-primary">Alugar</a></td>
-            <td><a href="/delete/{{ ap.id }}" class="btn btn-danger">Info</a></td>
+            <td>{{ ap.ap_name }}</td>
+            <td>
+                {% if ap.ap_status %}
+                    {{ "Livre" }}
+                {% else %}
+                    {{ "Alugado" }}
+                {% endif %}
+            </td>
+            <td>
+                {% if ap.ap_status %}
+                    {{ "--------------------------" }}
+                {% else %}
+                    {{ ap.locatario_nome }}
+                {% endif %}
+            </td>
+            <td>
+                {% if ap.ap_status %}
+                    {{ "--------------------------" }}
+                {% else %}
+                    {{ ap.valor_aluguel }}
+                {% endif %}
+            </td>
+            <td>
+                {% if ap.ap_status %}
+                    <a href="/alugar/{{ ap.id }}" class="btn btn-primary btn-lg">Alugar</a>
+                {% else %}
+                    <a href="/info/{{ ap.id }}" class="btn btn-danger btn-lg">Info</a>
+                {% endif %}
+            </td>
             </tr>
         {% endfor %}
         </tbody>

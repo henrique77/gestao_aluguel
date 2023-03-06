@@ -21,8 +21,8 @@
         <div class="mb-3">
             <label>Status do Apartamento:</label>
             <select class="form-control" name="ap_status" id="ap_status" value="{{ apartamento.ap_status }}">
-                <option value=0>Alugado</option>
                 <option value=1>Livre</option>
+                <option value=0>Alugado</option>
             </select>
         </div>
         <div class="mb-3">
@@ -31,19 +31,19 @@
         </div>
         <div class="mb-3">
             <label>Valor:</label>
-            <input type="number" step="0.02" class="form-control" name="valor_aluguel" id="valor_aluguel" required maxlength="10" value="{{ apartamento.valor_aluguel }}" />
+            <input type="number" step="0.01" class="form-control" name="valor_aluguel" id="valor_aluguel" maxlength="10" value="" />
         </div>
         <div class="mb-3">
             <label>Nome do Locatário:</label>
-            <input type="text" class="form-control" name="locatario_nome" id="locatario_nome" required maxlength="100" value="" />
+            <input type="text" class="form-control" name="locatario_nome" id="locatario_nome" maxlength="100" value="" />
         </div>
         <div class="mb-3">
             <label>Contato:</label>
             <input type="text" class="form-control" name="locatario_contato" id="locatario_contato" maxlength="15" value="" />
         </div>
         <div class="mb-3">
-            <button type="submit" class="btn btn-primary btn-lg" >Alugar</button>
-            <span><a href="/" class="btn btn-danger btn-lg">Voltar</a></span>
+            <button type="submit" class="btn btn-primary btn-lg" >Liberar</button>
+            <span><a href="/info/{{ apartamento.id }}" class="btn btn-danger btn-lg">Voltar</a></span>
         </div>
     </div>
     </form>

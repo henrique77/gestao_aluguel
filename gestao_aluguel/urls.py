@@ -19,4 +19,12 @@ from gestao_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.indexAp, name='indexAp'),
+    path('edificio', views.indexEd, name='edificio'),
+    path('addnewed', views.addnewEd, name='addnewed'),
+    path('addnewap', views.addnewAp, name='addnewap'),
+    path('alugar/<int:id>', views.alugarAp, name='alugar'),
+    path('liberar/<int:id>', views.liberarAp, name='liberar'),
+    path('info/<int:id>', views.infoAp, name='info'),
+    path('update/<int:id>', views.updateAp, name='update'),
 ]

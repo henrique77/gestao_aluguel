@@ -17,18 +17,18 @@
         </div>
         <div class="mb-3">
             <label>Status:</label>
-            <select name="ap_status">
+            <select name="ap_status" value="{{ form.ap_status }}">
                 <option value=1>Livre</option>
-                <option value=2>Alugado</option>
+                <option value=0>Alugado</option>
             </select>
-            {{ form.ap_status }}
         </div>
         <div class="mb-3">
             <label>Edificío:</label>
             {{ form.edificio_id }}
         </div>
         <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+            <span><a href="/edificio" class="btn btn-danger btn-lg">Voltar</a></span>
         </div>
     </div>
     </form>
