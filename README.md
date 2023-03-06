@@ -38,3 +38,9 @@ Agora só acessar:
 
  http://127.0.0.1:8000/
 ```
+
+Após algumas interações:
+
+<div align="center">
+	<img src="./github/gestao_home.png" alt="Gestao" height="auto">
+</div>
