@@ -15,11 +15,6 @@ Dentro do diretorio do projeto execute:
 
 ```
 
-source venv/bin/activate 
-```
-Em seguida:
-```
-
 sudo docker run -p 3306:3306 --name=mysql-gestao -d mysql/mysql-server
 ```
 
