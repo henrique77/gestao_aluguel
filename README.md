@@ -2,7 +2,7 @@
 
 ## Dependências
 
-É necessário que tenha instalado o [Docker Compose](https://docs.docker.com/compose/) version 1.25 ou superior.
+É necessário que tenha instalado o [Docker Compose](https://docs.docker.com/compose/) versão 1.25 ou superior.
 
 Primeiro copie o repositório para sua máquina local:
 
