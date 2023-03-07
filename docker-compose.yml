@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  gestao:
+    build:
+      context: .
+      dockerfile: ./Dokerfile
+    command: python ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+  database:
+    image: mysql:5.7
+    build:
+      context: .
+      dockerfile: ./mysql/Dokerfile
+    environment:
+      MYSQL_DATABASE: 'gestao'
+      MYSQL_ROOT_PASSWORD: '12345'
+      MYSQL_USER: 'root'
+    ports:
+      - '3306:3306'
+
+
